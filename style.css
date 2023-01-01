@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+:root {
+    /* colors */
+    --primary: #00B0D7;
+    --accent: #FF6060;
+    --dark: #001B2F;
+    --light: #fff;
+    --display__light: #fafafa;
+    --actions__light: #E9F6FF;
+    --display__dark: #00223A;
+    --actions__dark: #001B2F;
+}
+
+*{
+    margin: 0;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Open Sans', sans-serif;
+}
+/*Calculator*/
+.calculator {
+    width: 320px;
+    border-radius: 20px;
+    overflow: hidden; 
+    box-shadow: 8px 32px 64px rgba(0, 0, 0, 0.3);
+}
+.calculator__display {
+    padding: 20px 24px;
+    padding-bottom: 44px;
+    margin-bottom: -24px;
+    background-color: var(--display__light);
+    text-align: right;
+}
+.calculator__history {
+    font-size: 24px;
+    height: 33px;
+}
+.calculator__history strong{
+    font-weight: 400;
+    color: var(--accent);
+}
+.calculator__total {
+    font-size: 32px;
+    font-weight: 600;
+    height: 42px;
+}
+.calculator__actions {
+    padding: 16px; 
+    padding-bottom: 32px; 
+    border-radius: 20px;
+    background-color: var(--actions__light);
+    font-size: 24px;
+}
+.calculator__row {
+    display: flex;
+    justify-content: space-between;
+}
+.calculator__col {
+    --size: 64px;
+    cursor: pointer;
+    width: var(--size);
+    height: var(--size);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.calculator__col img {
+    pointer-events: none; /* так как история отслеживается как картинка надо было её заблокировать этим тегом*/
+}
+.calculator__col__reset {
+    color: var(--accent);
+}
+.calculator__col__action {
+    color: var(--primary);
+}
+/* Calculator dark theme */
+.calculator__dark{
+    color: var(--light);
+}
+.calculator__dark .calculator__display {
+    background-color: var(--display__dark);
+}
+.calculator__dark .calculator__actions {
+    background-color: var(--actions__dark);
+}
